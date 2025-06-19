@@ -5,3 +5,10 @@ compatibility_date = "2023-12-01"
 routes = [
   { pattern = "homershie.com/*", zone_name = "homershie.com" }
 ]
+
+# wrangler.toml (wrangler v3.88.0^)
+[observability.logs]
+enabled = true
+
+
+
