@@ -2,8 +2,12 @@ name = "proxy-router"
 main = "index.js"
 compatibility_date = "2023-12-01"
 
-routes = [
-  { pattern = "homershie.com/*", zone_name = "homershie.com" }
+# Cloudflare Pages 設定
+[pages]
+# 自訂網域設定
+custom_domains = [
+  "homershie.com",
+  "www.homershie.com"
 ]
 
 # wrangler.toml (wrangler v3.88.0^)

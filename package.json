@@ -1,0 +1,17 @@
+{
+  "name": "proxy-router",
+  "version": "1.0.0",
+  "description": "A proxy router for Cloudflare Pages",
+  "main": "index.js",
+  "scripts": {
+    "dev": "wrangler pages dev",
+    "deploy": "wrangler pages deploy"
+  },
+  "keywords": [
+    "cloudflare",
+    "pages",
+    "proxy"
+  ],
+  "author": "homershie",
+  "license": "MIT"
+}

@@ -4,9 +4,10 @@ export default {
       const url = new URL(request.url);
       const path = url.pathname;
       console.log("⛳️ Path:", path);
-      // 如果是首頁，導向 homershie.github.io
+
+      // 如果是首頁，返回自己的首頁內容
       if (path === "/") {
-        const response = await fetch("https://homershie.github.io");
+        const response = await fetch("https://homershie-github-io.pages.dev");
         return new Response(response.body, {
           status: response.status,
           headers: response.headers,
@@ -25,7 +26,8 @@ export default {
       // 檢查是否匹配任何代理路徑
       for (const proxyPath of proxyPaths) {
         if (path.startsWith(proxyPath)) {
-          const proxiedUrl = "https://homershie.github.io" + path;
+          const proxiedUrl = "https://homershie-github-io.pages.dev" + path;
+          console.log("🔄 Proxying to:", proxiedUrl);
           const response = await fetch(proxiedUrl);
           return new Response(response.body, {
             status: response.status,
@@ -37,6 +39,7 @@ export default {
       // 預設回首頁或 404
       return new Response("Not Found", { status: 404 });
     } catch (error) {
+      console.error("❌ Error:", error);
       return new Response("Internal Server Error", { status: 500 });
     }
   },
