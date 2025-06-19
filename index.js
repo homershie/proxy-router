@@ -3,7 +3,7 @@ export default {
     try {
       const url = new URL(request.url);
       const path = url.pathname;
-
+      console.log("⛳️ Path:", path);
       // 如果是首頁，導向 homershie.github.io
       if (path === "/") {
         const response = await fetch("https://homershie.github.io");
