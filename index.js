@@ -14,28 +14,6 @@ export default {
         });
       }
 
-      // 定義需要代理的路徑
-      const proxyPaths = [
-        "/pomodoro",
-        "/road_roller_da",
-        "/weight_of_wealth",
-        "/flowing_clock",
-        "/Kon-Satoshi-Introduction",
-      ];
-
-      // 檢查是否匹配任何代理路徑
-      for (const proxyPath of proxyPaths) {
-        if (path.startsWith(proxyPath)) {
-          const proxiedUrl = "https://homershie-github-io.pages.dev" + path;
-          console.log("🔄 Proxying to:", proxiedUrl);
-          const response = await fetch(proxiedUrl);
-          return new Response(response.body, {
-            status: response.status,
-            headers: response.headers,
-          });
-        }
-      }
-
       // 預設回首頁或 404
       return new Response("Not Found", { status: 404 });
     } catch (error) {
