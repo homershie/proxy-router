@@ -2,5 +2,6 @@ name = "proxy-router"
 main = "index.js"
 compatibility_date = "2023-12-01"
 
-[env.production]
-name = "proxy-router" 
+routes = [
+  { pattern = "homershie.com/*", zone_name = "homershie.com" }
+]
